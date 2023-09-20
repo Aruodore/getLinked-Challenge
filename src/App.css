@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --primary: linear-gradient(270deg, #903AFF 0%, #FE34B9 100%)
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  @apply bg-secondary text-white
+}
+.registerNav{
+  @apply inline-block py-2 px-5 bg-gradient-primary rounded;
+  border: 2px solid;
+  border-image-source: var(--primary);
+  border-image-slice: 1;
+}
+
+.registerNav.isActive{
+  @apply bg-none
+}
+
+.navLink.isActive{
+  background-image: var(--primary);
+  background-clip: text;
+  color: transparent;
+}
+
+.reg-form-container{
+ padding: 4rem;
+}
+
+.contactInput{
+  @apply relative bg-transparent p-2 border border-[#ffffff7d] rounded;
+  &:focus + span{
+    transform: translate(3rem, -1.5rem);
+    background-color: white;
+    border-radius: 2px;
+    @apply text-uni
+
+  }
+}
+
+.formOverlay{
+  border-radius: 12px;
+background: rgba(255, 255, 255, 0.03);
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+@media screen and (max-width:1024px) {
+.formOverlay{
+  box-shadow: none;
+}
+}
